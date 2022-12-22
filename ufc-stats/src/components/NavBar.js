@@ -4,29 +4,29 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <div>
+    <div className='font-NavBarFont'>
     {/* nav bar divided into 3 different sections */}
-    <ul className="flex flex-row flex-wrap justify-between bg-gray-300  w-full h-fit " >
+    <ul className="flex flex-row flex-wrap justify-between bg-gray-100  w-full h-fit border-b border-gray-300 rounded" >
       {/* section 1 */}
-        <li className="flex justify-left">
-            <img src={logo} className="p-3 " alt="Logo" />
+        <li className="flex justify-left border-x border-gray-300 rounded">
+            <img src={logo} className="p-4 mt-1 h-20" alt="Logo" />
         </li>
         {/* section 2 */}
-        <div className='flex justify-center flex-wrap'>
+        <div className='flex justify-center flex-wrap text-red-600 font-medium text-2xl'>
             <li>
-                <a className="inline-block border border-gray-300 rounded hover:border-gray-300 text-red-500 font-bold text-2xl hover:bg-gray-500 duration-500 p-7" href="/">Home</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">Home</a>
             </li>
             <li>
-                <a className="inline-block border border-gray-300 rounded hover:border-gray-300 text-red-500 font-bold text-2xl hover:bg-gray-500 duration-500 p-7" href="/FetchTest">FetchTest</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/CareerStats">CareerStats</a>
             </li>
             <li>
-                <a className="inline-block border border-gray-300 rounded hover:border-gray-300 text-red-500 font-bold text-2xl hover:bg-gray-500 duration-500 p-7" href="/CareerStats">CareerStats</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventPage">EventPage</a>
             </li>
             <li>
-                <a className="inline-block border border-gray-300 rounded hover:border-gray-300 text-red-500 font-bold text-2xl hover:bg-gray-500 duration-500 p-7" href="/EventPage">EventPage</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightPage">FightPage</a>
             </li>
             <li>
-                <a className="inline-block border border-gray-300 rounded hover:border-gray-300 text-red-500 font-bold text-2xl hover:bg-gray-500 duration-500 p-7" href="/FightPage">FightPage</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">FightListPage</a>
             </li>
         </div>
         {/* section 3 */}
