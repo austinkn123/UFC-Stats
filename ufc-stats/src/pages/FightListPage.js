@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from '../components/Footer';
 
 const FightListPage = () => {
   const [fighterList, setFighterList] = useState([]);
@@ -56,8 +57,7 @@ const FightListPage = () => {
             );
             
       })}
-      
-      
+
     </div>
   )
 }

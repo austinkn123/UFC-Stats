@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <div className='font-NavBarFont'>
     {/* nav bar divided into 3 different sections */}
-    <ul className="flex flex-row flex-wrap justify-between bg-gray-100  w-full h-fit border-b border-gray-300 rounded" >
+    <ul className="flex flex-row flex-wrap justify-between bg-gray-100 w-full h-fit border-b border-gray-300 rounded" >
       {/* section 1 */}
         <li className="flex justify-left border-x border-gray-300 rounded">
             <img src={logo} className="p-4 mt-1 h-20" alt="Logo" />
@@ -31,6 +31,7 @@ function NavBar() {
         </div>
         {/* section 3 */}
         <div>
+            {/* Github link icon */}
             {/* For search bar maybe */}
         </div>
       </ul>
