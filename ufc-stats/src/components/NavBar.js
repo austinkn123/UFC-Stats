@@ -28,6 +28,9 @@ function NavBar() {
             <li>
                 <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">FightListPage</a>
             </li>
+            <li>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventList">EventList</a>
+            </li>
         </div>
         {/* section 3 */}
         <div>

@@ -1,44 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import {Routes, Route, useNavigate} from "react-router-dom";
-import fighterList from '../imgs/fighterList.jpg';
-import homePageBackground from '../imgs/homePageBackground.webp';
+import {useNavigate} from "react-router-dom";
 import { Slide } from 'react-slideshow-image';
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   const navigateToFighterList = () => {
-    // 👇️ navigate to /contacts
     navigate('/FightListPage');
   };
 
   const navigateToEventList = () => {
-    // 👇️ navigate to /contacts
     navigate('/EventList');
   };
 
   const navigateToPersonalFavs = () => {
-    // 👇️ navigate to /contacts
     navigate('/PersonalFavs');
   };
 
-  const images = [
-        {fighterList},
-        '../imgs/homePageBackground.webp',
-        '../imgs/fighterList.jpg',
-    ];
-
   return (
     <div className='flex justify-center flex-wrap '>
-      <div className='w-full h-full '>
-        <Slide className='mx-0'>
-            <div className='bg-homePageBackground p-8 bg-no-repeat bg-cover h-screen'>
+      <div className='w-full'>
+        <Slide>
+            <div className='bg-homePageBackground bg-no-repeat bg-cover h-screen'>
                 
             </div>
-            <div className='bg-homePageBackground2 p-8  bg-no-repeat bg-cover h-screen'>
+            <div className='bg-homePageBackground2 bg-no-repeat bg-cover h-screen'>
 
             </div>
-            <div className='bg-homePageBackground3 p-8  bg-no-repeat bg-cover h-screen'>
+            <div className='bg-homePageBackground3 bg-no-repeat bg-cover h-screen'>
 
             </div>
         </Slide>

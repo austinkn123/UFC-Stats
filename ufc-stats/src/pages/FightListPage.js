@@ -1,64 +1,68 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
+import BasicTable from '../components/BasicTable';
+import useFetch from '../components/UseFetch';
 
 const FightListPage = () => {
-  const [fighterList, setFighterList] = useState([]);
+  const { data: fighterList } = useFetch('https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=d5bf379ab61e488d9b81de7d86bae8ea');
+  
+  // const sortNames = [...fighterList].sort((a, b) =>
+  //   a.FirstName > b.FirstName ? 1 : -1,
+  // );
 
-  useEffect(() => {
-    fetch('https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=d5bf379ab61e488d9b81de7d86bae8ea')
-    //head
-    .then(response => response.json())
-    //body (function)
-    .then(data => {
-      // console.log(data);
-      setFighterList(data);
-      // setCareerStats(data.CareerStats);
-      // console.log(CareerStats)
-    }
-    
-  );
-
-  }, [])
-
+  // const fighterNameWithA = fighterList.filter(fighter => {
+  //   if(fighter.FirstName){
+  //     if(fighter.FirstName.charAt(0) == 'A'){
+  //       return fighter.FirstName;
+  //     }
+  //   }
+  // }).sort((a, b) =>
+  //   a.FirstName > b.FirstName ? 1 : -1,
+  // );
+  // console.log(fighterNameWithA)
 
   return (
     <div>
-      FightListPage
-      {fighterList.map( (fightList) => {
-            return (
-              <div className='py-10 px-5 ' key={fightList.FighterId} >
-                {fightList.FirstName}
-                {fightList.LastName}
-                {fightList.Nickname}
-                {fightList.BirthDate}
-                {fightList.Height}
-                {fightList.Weight}
-                {fightList.Reach}
-                {fightList.Wins}
-                {fightList.Losses}
-                {fightList.Draws}
-                {fightList.NoContests}
-                {fightList.TechnicalKnockouts}
-                {fightList.TechnicalKnockoutLosses}
-                {fightList.Submissions}
-                {fightList.SubmissionLosses}
-                {fightList.TitleWins}
-                {fightList.TitleLosses}
-                {fightList.TitleDraws}
-                {/* {fightList.CareerStats.map( (CareerStats) => {
-                        return(
-                        <div> 
-                            {CareerStats.DecisionPercentage} 
-                        </div>
-                        );
-                    })} */}
-              </div>
-            
-            );
-            
-      })}
+      <BasicTable />
+      
 
     </div>
+
   )
 }
 export default FightListPage
+
+      // {fighterNameWithA.map( (fightList) => {
+      //       return (
+      //         <div className='py-10 px-5 ' key={fightList.FighterId} >
+      //           {/* {fightList.FighterId} */}
+      //           {/* {fightList.FirstName.charAt(0)} */}
+      //           {fightList.FirstName}
+      //           {fightList.Nickname}
+      //           {fightList.LastName}
+      //           {fightList.BirthDate}
+      //           {fightList.Height}
+      //           {fightList.Weight}
+      //           {fightList.Reach}
+      //           {fightList.Wins}
+      //           {fightList.Losses}
+      //           {fightList.Draws}
+      //           {fightList.NoContests}
+      //           {fightList.TechnicalKnockouts}
+      //           {fightList.TechnicalKnockoutLosses}
+      //           {fightList.Submissions}
+      //           {fightList.SubmissionLosses}
+      //           {fightList.TitleWins}
+      //           {fightList.TitleLosses}
+      //           {fightList.TitleDraws}
+      //           {/* {fightList.CareerStats.map( (CareerStats) => {
+      //                   return(
+      //                   <div> 
+      //                       {CareerStats.DecisionPercentage} 
+      //                   </div>
+      //                   );
+      //               })} */}
+      //         </div>
+            
+      //       );
+            
+      // })}
