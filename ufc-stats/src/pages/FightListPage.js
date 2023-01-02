@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import BasicTable from '../components/BasicTable';
+import FilteringTable from '../components/FilteringTable';
+import PaginationTable from '../components/PaginationTable';
+import RowSelection from '../components/RowSelection';
+import SortingTable from '../components/SortingTable';
 import useFetch from '../components/UseFetch';
 
 const FightListPage = () => {
@@ -21,9 +25,12 @@ const FightListPage = () => {
   // console.log(fighterNameWithA)
 
   return (
-    <div>
-      <BasicTable />
-      
+    <div className='p-12'>
+      {/* <BasicTable /> */}
+      {/* <SortingTable /> */}
+      {/* <FilteringTable /> */}
+      {/* <PaginationTable /> */}
+      <RowSelection />
 
     </div>
 

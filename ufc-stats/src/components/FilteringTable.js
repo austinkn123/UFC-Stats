@@ -1,24 +1,25 @@
 import React, { useMemo } from 'react'
 import useFetch from '../components/UseFetch';
-import { useTable } from 'react-table'
+import { useTable, useGlobalFilter, useFilters } from 'react-table'
 import { COLUMNS, GROUPED_COLUMNS } from './Columns'
 import FIGHTER_LIST_DATA from './FIGHTER_LIST_DATA'
+import { GlobalFilter } from './GlobalFilter';
+import { ColumnFilter } from './ColumnFilter';
 
 
-const BasicTable = () => {
+const FilteringTable = () => {
     //Note: Was going to make a api call to get data but useMemo is only happy when I copied the data from the api into a json file
 
     //This is so the page does not have to re-render every time and redo all of the logic. Improves performance
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => FIGHTER_LIST_DATA, [])
+    //For column Filter
+    // const defaultColumn = useMemo(() => {
+    //     return{
+    //         Filter: ColumnFilter
+    //     }
+    // }, [])
     
-    //useTable hook
-    const tableInstance = useTable({
-        columns,
-        data
-    })
-    console.log("data")
-
     //useTable hook that destructures properties from tableInstance, they are hooks from the table libary to make a table
     const { 
         getTableProps, 
@@ -27,10 +28,24 @@ const BasicTable = () => {
         footerGroups,
         rows, 
         prepareRow,
-    } = tableInstance
+        state,
+        setGlobalFilter,
+    } = useTable({
+        columns,
+        data,
+        //For column Filter
+        // defaultColumn
+    }, 
+        //For column Filter
+        // useFilters,
+        useGlobalFilter
+    )
+
+    const { globalFilter } = state
 
     return (
-        <div className='flex justify-center '>
+        <div className='flex justify-center'>
+            <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()} className='w-3/4 '>
                 {/* Header */}
                 <thead className='bg-gray-300 '>
@@ -39,6 +54,10 @@ const BasicTable = () => {
                     {headerGroup.headers.map(column => (
                         <th {...column.getHeaderProps()} className='p-4'>
                             {column.render('Header')}
+                            {/* Column Filter */}
+                            {/* <div>
+                                {column.canFilter ? column.render('Filter') : null}
+                            </div> */}
                         </th>
                     ))}
                     </tr>
@@ -83,7 +102,7 @@ const BasicTable = () => {
     )
 }
 
-export default BasicTable
+export default FilteringTable
 
 
 

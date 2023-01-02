@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react'
 import useFetch from '../components/UseFetch';
-import { useTable } from 'react-table'
+import { useTable, useRowSelect } from 'react-table'
 import { COLUMNS, GROUPED_COLUMNS } from './Columns'
 import FIGHTER_LIST_DATA from './FIGHTER_LIST_DATA'
+import { Checkbox } from './CheckBox';
 
 
-const BasicTable = () => {
+const RowSelection = () => {
     //Note: Was going to make a api call to get data but useMemo is only happy when I copied the data from the api into a json file
 
     //This is so the page does not have to re-render every time and redo all of the logic. Improves performance
@@ -27,7 +28,27 @@ const BasicTable = () => {
         footerGroups,
         rows, 
         prepareRow,
-    } = tableInstance
+        selectedFlatRows,
+    } = useTable({
+        columns,
+        data
+    }, 
+        useRowSelect,
+        hooks => {
+        hooks.visibleColumns.push(columns => [
+            {
+            id: 'selection',
+            Header: ({ getToggleAllRowsSelectedProps }) => (
+                <Checkbox {...getToggleAllRowsSelectedProps()} />
+            ),
+            Cell: ({ row }) => <Checkbox {...row.getToggleRowSelectedProps()} />
+            },
+            ...columns
+        ])
+        }
+    )
+
+    const firstPageRows = rows.slice(0, 10)
 
     return (
         <div className='flex justify-center '>
@@ -46,7 +67,7 @@ const BasicTable = () => {
                 </thead>
                 {/* Body */}
                 <tbody {...getTableBodyProps()} className='text-center'>
-                {rows.map(row => {
+                {firstPageRows.map(row => {
                     prepareRow(row)
                     return (
                     <tr {...row.getRowProps()} className='hover:bg-gray-200 odd:bg-white even:bg-slate-50'>
@@ -78,12 +99,20 @@ const BasicTable = () => {
                     }
                 </tfoot>
             </table>
+            <pre>
+                <code>
+                {JSON.stringify(
+                    {
+                    selectedFlatRows: selectedFlatRows.map(row => row.original)
+                    },
+                    null,
+                    2
+                )}
+                </code>
+            </pre>
         </div>
 
     )
 }
 
-export default BasicTable
-
-
-
+export default RowSelection
