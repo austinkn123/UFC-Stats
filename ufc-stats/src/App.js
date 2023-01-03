@@ -2,9 +2,9 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
-import CareerStats from './pages/CareerStats';
 import EventPage from './pages/EventPage';
 import FightPage from './pages/FightPage';
+import FigherPage from './pages/FigherPage';
 import FightListPage from './pages/FightListPage';
 import EventList from './pages/EventList';
 import PersonalFavs from './pages/PersonalFavs';
@@ -23,12 +23,12 @@ function App() {
         <div className='flex-grow'>
           <Routes>
             <Route path="/" element={<HomePage />}/>
-            <Route path="/CareerStats" element={<CareerStats />}/>
             <Route path="/EventPage" element={<EventPage />}/>
             <Route path="/FightPage" element={<FightPage />}/>
             <Route path="/FightListPage" element={<FightListPage />}/>
             <Route path="/EventList" element={<EventList />}/>
             <Route path="/PersonalFavs" element={<PersonalFavs />}/>
+            <Route path="/FighterPage/:id" element={<FigherPage />}/>
           </Routes>
         </div>
         <div className='pt-6  '>

@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
-import useFetch from '../components/UseFetch';
 import { useTable, usePagination } from 'react-table'
-import { COLUMNS, GROUPED_COLUMNS } from './Columns'
+import { COLUMNS, GROUPED_COLUMNS } from '../tables/Columns'
 import FIGHTER_LIST_DATA from './FIGHTER_LIST_DATA'
 
 

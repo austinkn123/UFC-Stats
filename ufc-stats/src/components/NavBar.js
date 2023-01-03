@@ -17,9 +17,6 @@ function NavBar() {
                 <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">Home</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/CareerStats">CareerStats</a>
-            </li>
-            <li>
                 <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventPage">EventPage</a>
             </li>
             <li>

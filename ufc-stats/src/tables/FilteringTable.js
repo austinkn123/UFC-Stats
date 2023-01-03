@@ -1,25 +1,24 @@
 import React, { useMemo } from 'react'
 import useFetch from '../components/UseFetch';
-import { useTable, useRowSelect } from 'react-table'
+import { useTable, useGlobalFilter, useFilters } from 'react-table'
 import { COLUMNS, GROUPED_COLUMNS } from './Columns'
 import FIGHTER_LIST_DATA from './FIGHTER_LIST_DATA'
-import { Checkbox } from './CheckBox';
+import { GlobalFilter } from './GlobalFilter';
 
 
-const RowSelection = () => {
+const FilteringTable = () => {
     //Note: Was going to make a api call to get data but useMemo is only happy when I copied the data from the api into a json file
 
     //This is so the page does not have to re-render every time and redo all of the logic. Improves performance
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => FIGHTER_LIST_DATA, [])
+    //For column Filter
+    // const defaultColumn = useMemo(() => {
+    //     return{
+    //         Filter: ColumnFilter
+    //     }
+    // }, [])
     
-    //useTable hook
-    const tableInstance = useTable({
-        columns,
-        data
-    })
-    console.log("data")
-
     //useTable hook that destructures properties from tableInstance, they are hooks from the table libary to make a table
     const { 
         getTableProps, 
@@ -28,30 +27,24 @@ const RowSelection = () => {
         footerGroups,
         rows, 
         prepareRow,
-        selectedFlatRows,
+        state,
+        setGlobalFilter,
     } = useTable({
         columns,
-        data
+        data,
+        //For column Filter
+        // defaultColumn
     }, 
-        useRowSelect,
-        hooks => {
-        hooks.visibleColumns.push(columns => [
-            {
-            id: 'selection',
-            Header: ({ getToggleAllRowsSelectedProps }) => (
-                <Checkbox {...getToggleAllRowsSelectedProps()} />
-            ),
-            Cell: ({ row }) => <Checkbox {...row.getToggleRowSelectedProps()} />
-            },
-            ...columns
-        ])
-        }
+        //For column Filter
+        // useFilters,
+        useGlobalFilter
     )
 
-    const firstPageRows = rows.slice(0, 10)
+    const { globalFilter } = state
 
     return (
-        <div className='flex justify-center '>
+        <div className='flex justify-center'>
+            <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()} className='w-3/4 '>
                 {/* Header */}
                 <thead className='bg-gray-300 '>
@@ -60,6 +53,10 @@ const RowSelection = () => {
                     {headerGroup.headers.map(column => (
                         <th {...column.getHeaderProps()} className='p-4'>
                             {column.render('Header')}
+                            {/* Column Filter */}
+                            {/* <div>
+                                {column.canFilter ? column.render('Filter') : null}
+                            </div> */}
                         </th>
                     ))}
                     </tr>
@@ -67,7 +64,7 @@ const RowSelection = () => {
                 </thead>
                 {/* Body */}
                 <tbody {...getTableBodyProps()} className='text-center'>
-                {firstPageRows.map(row => {
+                {rows.map(row => {
                     prepareRow(row)
                     return (
                     <tr {...row.getRowProps()} className='hover:bg-gray-200 odd:bg-white even:bg-slate-50'>
@@ -99,20 +96,12 @@ const RowSelection = () => {
                     }
                 </tfoot>
             </table>
-            <pre>
-                <code>
-                {JSON.stringify(
-                    {
-                    selectedFlatRows: selectedFlatRows.map(row => row.original)
-                    },
-                    null,
-                    2
-                )}
-                </code>
-            </pre>
         </div>
 
     )
 }
 
-export default RowSelection
+export default FilteringTable
+
+
+

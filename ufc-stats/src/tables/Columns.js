@@ -1,12 +1,11 @@
 import { format } from 'date-fns'
-import { ColumnFilter } from './ColumnFilter'
 
 export const COLUMNS = [
-    {
-        Header: 'Id',
-        Footer: 'Id',
-        accessor: 'FighterId',
-    },
+    // {
+    //     Header: 'Id',
+    //     Footer: 'Id',
+    //     accessor: 'FighterId',
+    // },
     {
         Header: 'First Name',
         Footer: 'First Name',
@@ -100,7 +99,10 @@ export const GROUPED_COLUMNS = [
             {
                 Header: 'Date of Birth',
                 Footer: 'Date of Birth',
-                accessor: 'BirthDate'
+                accessor: 'BirthDate',
+                Cell: ({ value }) => {
+                    return format(new Date(value), 'MM/dd/yyyy')
+                },
             },
             {
                 Header: 'Ht (cm)',

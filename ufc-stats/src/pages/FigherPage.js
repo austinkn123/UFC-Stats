@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 
-const CareerStats = () => {
+const FigherPage = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
+
     const [fighter, setFighter] = useState({});
     const [CareerStats, setCareerStats] = useState({});
     useEffect(() => {
-        fetch('https://api.sportsdata.io/v3/mma/scores/json/Fighter/140000098?key=d5bf379ab61e488d9b81de7d86bae8ea')
+        fetch(`https://api.sportsdata.io/v3/mma/scores/json/Fighter/${id}?key=d5bf379ab61e488d9b81de7d86bae8ea`)
         //head
         .then(response => response.json())
         //body (function)
@@ -18,8 +22,10 @@ const CareerStats = () => {
     );
 
     }, [])
+
     return (
         <div>
+            {fighter.BirthDate}
             {CareerStats.FirstName}
             {CareerStats.LastName}
             {CareerStats.SigStrikesLandedPerMinute}
@@ -30,9 +36,8 @@ const CareerStats = () => {
             {CareerStats.TechnicalKnockoutPercentage}
             {CareerStats.DecisionPercentage}
 
-
         </div>
     )
 }
 
-export default CareerStats
+export default FigherPage
