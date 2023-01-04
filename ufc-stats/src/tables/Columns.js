@@ -22,7 +22,7 @@ export const COLUMNS = [
         accessor: 'Nickname',
     },
     {
-        Header: 'Date of Birth',
+        Header: 'DoB',
         Footer: 'Date of Birth',
         accessor: 'BirthDate',
         Cell: ({ value }) => {

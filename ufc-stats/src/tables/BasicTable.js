@@ -4,6 +4,7 @@ import { COLUMNS, GROUPED_COLUMNS } from './Columns'
 import FIGHTER_LIST_DATA from './FIGHTER_LIST_DATA'
 import { useNavigate } from "react-router-dom";
 import { GlobalFilter } from './GlobalFilter';
+import TableSummaryText from '../components/TableSummaryText';
 
 
 const BasicTable = () => {
@@ -50,9 +51,20 @@ const BasicTable = () => {
     };
 
     return (
-        <div className='flex justify-center '>
-            <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
-            <table {...getTableProps()} className='w-3/4 '>
+        <div className='flex justify-center flex-col w-full'>
+            <div className='flex justify-between pb-4'>
+                <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
+                <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
+                    {
+                        [10, 25, 50].map((pageSize) => (
+                            <option key={pageSize} value={pageSize}>
+                                View {pageSize}
+                            </option>
+                        ))
+                    }
+                </select>
+            </div>
+            <table {...getTableProps()} >
                 {/* Header */}
                 <thead className='bg-gray-300 '>
                 {headerGroups.map(headerGroup => (
@@ -82,51 +94,25 @@ const BasicTable = () => {
                     )
                 })}
                 </tbody>
-                {/* Footer */}
-                {/* <tfoot className='bg-gray-300 font-bold text-center'>
-                    {
-                        footerGroups.map(footerGroup => (
-                            <tr {...footerGroup.getFooterGroupProps() } className='w-full'>
-                                {
-                                    footerGroup.headers.map(column => (
-                                        <td {...column.getFooterGroupProps} className='p-4'>
-                                            {column.render('Footer')}
-                                        </td>
-                                    ))
-                                }
-                            </tr>
-                        ))
-                    }
-                </tfoot> */}
             </table>
-            <div>
+            <div className='flex flex-row justify-between pt-4'>
+                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} className='hover:text-red-600 duration-500'>{'<<'}</button>
+                <button onClick={() => previousPage()} disabled={!canPreviousPage} className='hover:text-red-600 duration-500'>Previous</button>
                 <div>
-                    <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
-                        {
-                            [10, 25, 50].map((pageSize) => (
-                                <option key={pageSize} value={pageSize}>
-                                    Show {pageSize}
-                                </option>
-                            ))
-                        }
-                    </select>
-                    <div>
-                        {pageIndex + 1} / {pageOptions.length}
-                    </div>
-                    <div>
-                        | Got to Page: {' '}
-                        <input type='number' defaultValue={pageIndex + 1}
-                        onChange={e=> {
-                            const pageNumber = e.target.value ? Number(e.target.value) - 1 : 0
-                            gotoPage(pageNumber)
-                        }} />
-                    </div>
+                    {pageIndex + 1} / {pageOptions.length}
                 </div>
-                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
-                <button onClick={() => previousPage()} disabled={!canPreviousPage}>Previous</button>
-                <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
-                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>
+                <button onClick={() => nextPage()} disabled={!canNextPage} className='hover:text-red-600 duration-500'>Next</button>
+                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} className='hover:text-red-600 duration-500'>{'>>'}</button>
             </div>
+            <div className='pt-4'>
+                Page: {' '}
+                <input type='number' defaultValue={pageIndex + 1} className='border border-gray-800 w-min'
+                onChange={e=> {
+                    const pageNumber = e.target.value ? Number(e.target.value) - 1 : 0
+                    gotoPage(pageNumber)
+                }} />
+            </div>
+            <TableSummaryText />
         </div>
 
     )

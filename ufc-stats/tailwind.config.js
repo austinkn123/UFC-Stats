@@ -6,7 +6,8 @@ module.exports = {
  theme: {
     extend: {
       fontFamily: {
-        NavBarFont: ['Oswald']
+        NavBarFont: ['Oswald'],
+        Table: ['Roboto Condensed'],
       },
       backgroundImage: {
         fightList:

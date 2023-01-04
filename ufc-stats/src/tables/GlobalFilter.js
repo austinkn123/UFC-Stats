@@ -15,7 +15,7 @@ export const GlobalFilter = ({ filter, setFilter}) => {
                 setValue(e.target.value);
                 onChange(e.target.value);
                 }}
-                className='border-2 border-gray-800'
+                className='border border-gray-800'
             />
         </div>
     )
