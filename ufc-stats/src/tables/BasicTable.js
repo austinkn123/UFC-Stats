@@ -4,7 +4,6 @@ import { COLUMNS, GROUPED_COLUMNS } from './Columns'
 import FIGHTER_LIST_DATA from './FIGHTER_LIST_DATA'
 import { useNavigate } from "react-router-dom";
 import { GlobalFilter } from './GlobalFilter';
-import TableSummaryText from '../components/TableSummaryText';
 
 
 const BasicTable = () => {
@@ -112,7 +111,6 @@ const BasicTable = () => {
                     gotoPage(pageNumber)
                 }} />
             </div>
-            <TableSummaryText />
         </div>
 
     )

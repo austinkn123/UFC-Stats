@@ -31,7 +31,7 @@ function App() {
             <Route path="/FighterPage/:id" element={<FigherPage />}/>
           </Routes>
         </div>
-        <div className='pt-6  '>
+        <div>
           <Footer/>
         </div>
         

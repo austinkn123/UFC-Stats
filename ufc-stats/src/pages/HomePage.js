@@ -66,7 +66,6 @@ const HomePage = () => {
           </h1>
         </button>
       </div>
-      
     </div>
   )
 }

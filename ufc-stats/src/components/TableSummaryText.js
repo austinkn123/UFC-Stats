@@ -4,7 +4,8 @@ const TableSummaryText = () => {
   return (
     <div className='pt-8'>
         <p>
-            My UFC Fighters page contains relevant information on every fighter who’s fought a fight in the UFC given to me by the api. 
+            My UFC Fighters page contains relevant information on every fighter who’s fought a fight in the UFC given to me by the api.
+            Try clicking on a row on the table to see more about the fighter's information. 
         </p>
         <p className='pb-4 text-red-600'>
             Note: Some data from this api is extremely inaccurate. Such as some of the fighters weight over 300lbs. 
@@ -31,7 +32,7 @@ const TableSummaryText = () => {
             Wins: This is the amount of wins they’ve had over the course of their career.
         </p>
         <p className='py-4 border-b'>
-            Loses: This is the amount of loses they’ve had over the course of their career.
+            Losses: This is the amount of loses they’ve had over the course of their career.
         </p>
         <p className='py-4 border-b'>
             Height: How tall a fighter is can tell you how they measure in terms of feet and inches. Pretty cool, eh?
