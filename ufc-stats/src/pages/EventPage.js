@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 
 const EventPage = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
+
     const [event, setEvent] = useState([]);
     const [fights, setFights] = useState([]);
     useEffect(() => {
-        fetch('https://api.sportsdata.io/v3/mma/scores/json/Event/279?key=d5bf379ab61e488d9b81de7d86bae8ea')
+        fetch(`https://api.sportsdata.io/v3/mma/scores/json/Event/${id}?key=d5bf379ab61e488d9b81de7d86bae8ea`)
         //head
         .then(response => response.json())
         //body (function)
@@ -20,11 +24,12 @@ const EventPage = () => {
 
     return (
         <div>
-            {event.EventId}
+            {event.Name}
             {fights.map( (fights) => {
                 return (
                 <div className='py-10 px-5 ' key={fights.FightId} >
-                    {fights.Rounds}
+                    {fights.FightId}
+                    {/* {fights.Rounds} */}
                     {fights.Fighters.map( (fighters) => {
                         return(
                         <div> 
@@ -37,9 +42,6 @@ const EventPage = () => {
                 );
                 
              })}
-
-
-
         </div>
     )
 }

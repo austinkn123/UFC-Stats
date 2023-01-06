@@ -23,7 +23,7 @@ function App() {
         <div className='flex-grow'>
           <Routes>
             <Route path="/" element={<HomePage />}/>
-            <Route path="/EventPage" element={<EventPage />}/>
+            <Route path="/EventPage/:id" element={<EventPage />}/>
             <Route path="/FightPage" element={<FightPage />}/>
             <Route path="/FightListPage" element={<FightListPage />}/>
             <Route path="/EventList" element={<EventList />}/>
@@ -34,6 +34,7 @@ function App() {
         <div className='h-fit'>
           <Footer/>
         </div>
+
       </div>
     </Router>
 
