@@ -31,10 +31,9 @@ function App() {
             <Route path="/FighterPage/:id" element={<FigherPage />}/>
           </Routes>
         </div>
-        <div>
+        <div className='h-fit'>
           <Footer/>
         </div>
-        
       </div>
     </Router>
 

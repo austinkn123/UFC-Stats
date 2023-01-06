@@ -25,6 +25,7 @@ const FigherPage = () => {
 
     return (
         <div>
+            {/* Header Area */}
             <div className='px-16 py-12 flex justify-between'>
                 <div>
                     <h1 className='font-NavBarFont font-semibold leading-tight text-5xl mt-0 mb-2 text-red-600 '>
@@ -65,9 +66,12 @@ const FigherPage = () => {
                     </h1>
                 </div>
             </div>
-
-            <div className='h-screen bg-black p-16'>
-                <div className='bg-white p-4 flex flex-row justify-between'>
+            {/* Stats Area */}
+            <div className='h-max bg-black p-16'>
+                <h1 className='font-NavBarFont font-semibold leading-tight text-5xl mt-0 mb-2 text-red-600 '>
+                        TITLE STATS
+                    </h1>
+                <div className='bg-white p-4 px-8 flex flex-row justify-between'>
                     <div className='flex flex-row'>
                         <h1 className='font-NavBarFont font-semibold text-5xl '>
                             {fighter.TitleWins}
@@ -150,19 +154,105 @@ const FigherPage = () => {
                         
                     </div>
                 </div>
-
-                
+                {/* TKO STATS */}
+                <div className='pt-8 '>
+                    <h1 className='font-NavBarFont font-semibold leading-tight text-5xl mt-0 mb-2 text-red-600 '>
+                        TECHNICAL KNOCKOUT STATS
+                    </h1>
+                    <div className='bg-white p-4 px-8 flex flex-row justify-between'>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {fighter.TechnicalKnockouts}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl text-gray-500 pt-2 pl-2'>
+                                TKO WINS
+                            </h1>
+                        </div>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {fighter.TechnicalKnockoutLosses}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl pt-2 pl-2 text-gray-500'>
+                                TKO LOSSES
+                            </h1>
+                        </div>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {CareerStats.TechnicalKnockoutPercentage}{'%'}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl pt-2 pl-2 text-gray-500'>
+                                TKO AVG
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                {/* SUB STATS */}
+                <div className='pt-8 '>
+                    <h1 className='font-NavBarFont font-semibold leading-tight text-5xl mt-0 mb-2 text-red-600 '>
+                        SUBMISSION STATS
+                    </h1>
+                    <div className='bg-white p-4 px-8 flex flex-row justify-between'>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {fighter.Submissions}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl text-gray-500 pt-2 pl-2'>
+                                SUB WINS
+                            </h1>
+                        </div>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {fighter.SubmissionLosses}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl pt-2 pl-2 text-gray-500'>
+                                SUB LOSSES
+                            </h1>
+                        </div>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {CareerStats.SubmissionAverage}{'%'}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl pt-2 pl-2 text-gray-500'>
+                                SUB AVG
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                {/* miscellaneous STATS */}
+                <div className='pt-8 '>
+                    <h1 className='font-NavBarFont font-semibold leading-tight text-5xl mt-0 mb-2 text-red-600 '>
+                        MISCELLANEOUS STATS
+                    </h1>
+                    <div className='bg-white p-4 px-8 flex flex-row justify-between'>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {CareerStats.SigStrikesLandedPerMinute}{'%'}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl text-gray-500 pt-2 pl-2'>
+                                SIG STRIKES PER MIN
+                            </h1>
+                        </div>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {CareerStats.KnockoutPercentage}{'%'}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl pt-2 pl-2 text-gray-500'>
+                                KO AVG
+                            </h1>
+                        </div>
+                        <div className='flex flex-row'>
+                            <h1 className='font-NavBarFont font-semibold text-5xl '>
+                                {CareerStats.DecisionPercentage}{'%'}
+                            </h1>
+                            <h1 className='font-NavBarFont font-semibold text-2xl pt-2 pl-2 text-gray-500'>
+                                DEC AVG
+                            </h1>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
-            
-            
 
-            {CareerStats.SigStrikesLandedPerMinute}
-            {CareerStats.SubmissionAverage}
-            {CareerStats.KnockoutPercentage}
-            {CareerStats.TechnicalKnockoutPercentage}
-            {CareerStats.DecisionPercentage}
-            
 
         </div>
     )
