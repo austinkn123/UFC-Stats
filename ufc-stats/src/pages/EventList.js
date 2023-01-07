@@ -28,14 +28,16 @@ const EventList = () => {
           some we won’t. Numbered UFC events are PPV, i.e. you have to buy a ticket to watch them. They feature the best fights on 
           the roster, with championship fights headlining the event. On average, numbered UFC events are held once per month.
           On the other hand, UFC Fight Nights are smaller types of events, usually held every weekend, that you can watch without 
-          buying the PPV. They consist of somewhat “smaller” fights and rarely feature a championship fight.
+          buying the PPV. They consist of somewhat “smaller” fights and rarely feature a championship fight. Regarding the number 
+          of fights per different type of UFC event, they range around 12 or 13 fights (maybe less if 
+          some fight gets canceled).
         </p>
       </div>
         {eventList.map( (eventList) => {
             return (
               <div className='text-center py-10 px-5 border' key={eventList.EventId} onClick={()=> navigateToEventPage(eventList.EventId)} >
                 {/* {eventList.EventId} */}
-                <h1 className='font-NavBarFont font-semibold leading-tight text-5xl mt-0 mb-2 text-black underline decoration-red-600'>
+                <h1 className='font-NavBarFont font-semibold leading-tight mb-2 text-5xl text-black underline decoration-red-600'>
                   {eventList.Name}
                 </h1>
                 <div className='font-NavBarFont font-semibold text-2xl text-gray-500 pt-2 pl-2'>

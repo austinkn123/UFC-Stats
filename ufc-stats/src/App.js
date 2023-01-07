@@ -24,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />}/>
             <Route path="/EventPage/:id" element={<EventPage />}/>
-            <Route path="/FightPage" element={<FightPage />}/>
+            <Route path="/FightPage/:id" element={<FightPage />}/>
             <Route path="/FightListPage" element={<FightListPage />}/>
             <Route path="/EventList" element={<EventList />}/>
             <Route path="/PersonalFavs" element={<PersonalFavs />}/>
