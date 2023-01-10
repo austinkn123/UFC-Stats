@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
+import fighterRightSide from '../imgs/fighter-right-side.jpg'
+import fighterLeftSide from '../imgs/fighter-left-side.jpg'
+import FightTabInfo from '../components/FightTabInfo';
+import FightSummaryText from '../components/FightSummaryText';
 
 const FightPage = () => {
     const { id } = useParams();
@@ -23,28 +27,56 @@ const FightPage = () => {
 
     }, [])
 
+    const showWinner = (fighterWin) => {
+        if(fighterWin?.Winner){
+            return(
+                <div className='bg-red-600 w-fit p-2 m-4 mt-0'>
+                    WIN
+                </div>
+            );
+        }
+    };
+
     return (
-        <div>
-            {FighterStats.map( (FighterStats) => {
-                return (
-                <div className='py-10 px-5 ' key={FighterStats.FighterId} >
-                    FightStats: {FighterStats.FantasyPoints}
+        <div className='py-8 px-16'>
+            <div className='flex justify-between w-full font-NavBarFont font-bold text-4xl '>
+                <div className='flex flex-row border-b-4 border-red-600 w-1/2'>
+                    <h1>
+                        {Fighters[0]?.FirstName}{" "}{Fighters[0]?.LastName}
+                    </h1>
+                    <div className='flex justify-center font-NavBarFont text-center text-white text-2xl '>
+                        {showWinner(Fighters[0])}
+                    </div>
+                </div>
+                <div className='flex flex-row justify-end border-b-4 border-blue-600 w-1/2 '>
+                    <div className='font-NavBarFont text-center text-white text-2xl '>
+                        {showWinner(Fighters[1])}
+                    </div>
+                    <h1>
+                        {Fighters[1]?.FirstName}{" "}{Fighters[1]?.LastName}
+                    </h1>
+                    
                 </div>
                 
-                );
-                
-             })}
-
-             {Fighters.map( (Fighters) => {
-                return (
-                <div className='py-10 px-5 ' key={Fighters.FighterId} >
-                    Fighters: {Fighters.Moneyline}
+            </div>
+            <div className='flex justify-between w-full '>
+                <div className='w-1/3'>
+                    <img src={fighterLeftSide} className='object-contain ' alt="fighterIcon" />
+                    
                 </div>
-                
-                );
-                
-             })}
-
+                <div className='w-1/3'>
+                    <FightTabInfo
+                     RedFighterStats={FighterStats[0]}
+                     BlueFighterStats={FighterStats[1]}
+                     RedFighter={Fighters[0]}
+                     BlueFighter={Fighters[1]}
+                    />
+                </div>
+                <div className='w-1/3'>
+                    <img src={fighterRightSide} className='object-contain h-max' alt="fighterIcon" />
+                </div>
+            </div>
+            <FightSummaryText />
         </div>
     )
 }
