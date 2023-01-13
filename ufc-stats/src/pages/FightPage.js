@@ -30,7 +30,7 @@ const FightPage = () => {
     const showWinner = (fighterWin) => {
         if(fighterWin?.Winner){
             return(
-                <div className='bg-red-600 w-fit p-2 m-4 mt-0'>
+                <div className='bg-red-600 w-fit p-2 pt-2 m-4 mt-0'>
                     WIN
                 </div>
             );
@@ -41,9 +41,15 @@ const FightPage = () => {
         <div className='py-8 px-16'>
             <div className='flex justify-between w-full font-NavBarFont font-bold text-4xl '>
                 <div className='flex flex-row border-b-4 border-red-600 w-1/2'>
-                    <h1>
-                        {Fighters[0]?.FirstName}{" "}{Fighters[0]?.LastName}
-                    </h1>
+                    <div>
+                       <h1>
+                            {Fighters[0]?.FirstName}{" "}{Fighters[0]?.LastName}
+                        </h1> 
+                        <h2 className='text-2xl text-gray-400'>
+                            {Fighters[0]?.PreFightWins}{"-"}{Fighters[0]?.PreFightLosses}{"-"}{Fighters[0]?.PreFightDraws}
+                        </h2>
+                    </div>
+                    
                     <div className='flex justify-center font-NavBarFont text-center text-white text-2xl '>
                         {showWinner(Fighters[0])}
                     </div>
@@ -52,9 +58,15 @@ const FightPage = () => {
                     <div className='font-NavBarFont text-center text-white text-2xl '>
                         {showWinner(Fighters[1])}
                     </div>
-                    <h1>
-                        {Fighters[1]?.FirstName}{" "}{Fighters[1]?.LastName}
-                    </h1>
+                    <div>
+                        <h1>
+                            {Fighters[1]?.FirstName}{" "}{Fighters[1]?.LastName}
+                        </h1>
+                        <h2 className='text-right text-2xl text-gray-400'>
+                            {Fighters[1]?.PreFightWins}{"-"}{Fighters[1]?.PreFightLosses}{"-"}{Fighters[1]?.PreFightDraws}
+                        </h2>
+                    </div>
+                    
                     
                 </div>
                 

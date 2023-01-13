@@ -17,11 +17,13 @@ module.exports = {
         personalFav:
           "url('./imgs/personalFav.webp')",
         homePageBackground:
-          "url('./imgs/homePageBackground.webp')",
+          "url('./imgs/homePageBackground.jpg')",
         homePageBackground2:
           "url('./imgs/homePageBackground2.jpg')",
         homePageBackground3:
           "url('./imgs/homePageBackground3.jpg')",
+        RedBlackBackground:
+          "url('./imgs/RedBlackBackground.jpg')",
       },
     },
   },

@@ -37,7 +37,7 @@ const EventList = () => {
             return (
               <div className='text-center py-10 px-5 border' key={eventList.EventId} onClick={()=> navigateToEventPage(eventList.EventId)} >
                 {/* {eventList.EventId} */}
-                <h1 className='font-NavBarFont font-semibold leading-tight mb-2 text-5xl text-black underline decoration-red-600'>
+                <h1 className='font-NavBarFont font-semibold leading-tight mb-2 text-5xl text-black underline decoration-red-600 hover:text-gray-500 duration-500'>
                   {eventList.Name}
                 </h1>
                 <div className='font-NavBarFont font-semibold text-2xl text-gray-500 pt-2 pl-2'>

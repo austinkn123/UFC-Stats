@@ -24,12 +24,12 @@ const FightTabInfo = (props) => {
         <div className='pt-8'>
             <div className="container mx-auto">
                 <div className="flex flex-col items-center justify-center max-w-xl">
-                    <ul className="flex space-x-4 ">
+                    <ul className="flex space-x-2 font-Table font-bold text-xl text-gray-400">
                         <li>
                             <a
                                 href="#"
                                 onClick={() => setOpenTab(1)}
-                                className="inline-block px-4 py-2 bg-gray-200 rounded hover:bg-gray-400 duration-500"
+                                className="inline-block px-4 py-2 hover:text-gray-600 duration-500"
                             >
                                 Stats
                             </a>
@@ -38,7 +38,7 @@ const FightTabInfo = (props) => {
                             <a
                                 href="#"
                                 onClick={() => setOpenTab(2)}
-                                className="inline-block px-4 py-2 bg-gray-200 rounded hover:bg-gray-400 duration-500"
+                                className="inline-block px-4 py-2 hover:text-gray-600 duration-500"
                             >
                                 Odds
                             </a>
@@ -47,7 +47,7 @@ const FightTabInfo = (props) => {
                             <a
                                 href="#"
                                 onClick={() => setOpenTab(3)}
-                                className="inline-block px-4 py-2 bg-gray-200 rounded hover:bg-gray-400 duration-500"
+                                className="inline-block px-4 py-2 hover:text-gray-600 duration-500"
                             >
                                 Rounds
                             </a>

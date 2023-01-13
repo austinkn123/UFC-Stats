@@ -20,15 +20,15 @@ const HomePage = () => {
   return (
     <div className='flex justify-center flex-wrap '>
       <div className='w-full'>
-        <Slide>
+        <Slide arrows={false}>
             <div className='bg-homePageBackground bg-no-repeat bg-cover h-screen'>
-                
+
             </div>
             <div className='bg-homePageBackground2 bg-no-repeat bg-cover h-screen'>
 
             </div>
             <div className='bg-homePageBackground3 bg-no-repeat bg-cover h-screen'>
-
+                
             </div>
         </Slide>
       </div>
