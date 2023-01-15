@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../imgs/fight-site-icon.png';
 import { Link } from 'react-router-dom';
+import GithubIcon from "../imgs/Github-Icon.png"
 
 function NavBar() {
   return (
@@ -27,9 +28,12 @@ function NavBar() {
             </li>
         </div>
         {/* section 3 */}
-        <div>
-            {/* Github link icon */}
-            {/* For search bar maybe */}
+        <div className='mt-7 mr-1'>
+          {/* Opens the link in the new tab */}
+          <a href="https://github.com/austinkn123/UFC-Stats" target="_blank" rel="noreferrer">
+            <img src={GithubIcon} className='object-contain h-8 w-16' alt="GithubIcon" />
+          </a>
+            
         </div>
       </ul>
     </div>
