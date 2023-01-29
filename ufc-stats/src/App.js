@@ -13,13 +13,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
- 
+    // Routing different links to different pages
     <Router>
       <div className='min-h-screen flex flex-col'>
         <div>
           <NavBar />
         </div>
-        
+        {/* Can create different routes, the ":id" is dynamic route parameter */}
         <div className='flex-grow'>
           <Routes>
             <Route path="/" element={<HomePage />}/>

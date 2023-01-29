@@ -1,6 +1,5 @@
 import React from 'react'
 import logo from '../imgs/fight-site-icon.png';
-import { Link } from 'react-router-dom';
 import GithubIcon from "../imgs/Github-Icon.png"
 
 function NavBar() {

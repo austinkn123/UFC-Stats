@@ -11,11 +11,13 @@ const BasicTable = () => {
 
     const navigate = useNavigate();
 
-    //This is so the page does not have to re-render every time and redo all of the logic. Improves performance
+    // This is so the page does not have to re-render every time and redo all of the logic. Improves performance
+    // Caching a value so that it does not need to be recalculated
+    // useMemo Hook only runs when one of its dependencies update 
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => FIGHTER_LIST_DATA, [])
     
-    //useTable hook that destructures properties from tableInstance, they are hooks from the table libary to make a table
+    //useTable hook that destructures properties from tableInstance, they are hooks from the table library to make a table
     const { 
         getTableProps, 
         getTableBodyProps, 
@@ -42,9 +44,12 @@ const BasicTable = () => {
         useRowSelect,
     )
 
+    // The tutorial guy didnt explain what this is :(
+    // I think these are hooks to hold the page indexes / filtering in states 
     const { pageIndex, pageSize } = state
     const { globalFilter } = state
 
+    // Used to navigate to different fighters using the fighterId as the route parameter
     const navigateToFighterPage = (rowId) => {
         navigate(`/FighterPage/${rowId.original.FighterId}`);
     };

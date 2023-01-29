@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 
 //Hook
 const useFetch = (url) => {
+  // useState Hook
   const [data, setData] = useState([{}]);
+  
   // const [isPending, setIsPending] = useState(true);
   // const [error, setError] = useState(null);
 

@@ -3,8 +3,10 @@ import {useNavigate} from "react-router-dom";
 import { Slide } from 'react-slideshow-image';
 
 const HomePage = () => {
+  // Use navigate hook, uses link to navigate to different page
   const navigate = useNavigate();
 
+  // Methods to navigate to different routes
   const navigateToFighterList = () => {
     navigate('/FightListPage');
   };
@@ -20,6 +22,7 @@ const HomePage = () => {
   return (
     <div className='flex justify-center flex-wrap '>
       <div className='w-full'>
+        {/* Imported package to slide show */}
         <Slide arrows={false}>
             <div className='bg-homePageBackground bg-no-repeat bg-cover h-screen'>
 

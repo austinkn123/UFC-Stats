@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import fighterIcon from "../imgs/fighter-icon.jpg"
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const FigherPage = () => {
+    // The useParams hook returns an object of key/value pairs of the dynamic params from the 
+    // current URL that were matched by the <Route path>. Child routes inherit all params from their parent routes.
     const { id } = useParams();
-    const navigate = useNavigate();
+
 
     const [fighter, setFighter] = useState({});
     const [CareerStats, setCareerStats] = useState({});
+    
     useEffect(() => {
         fetch(`https://api.sportsdata.io/v3/mma/scores/json/Fighter/${id}?key=d5bf379ab61e488d9b81de7d86bae8ea`)
         //head
