@@ -17,13 +17,13 @@ function NavBar() {
                 <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">HOME</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">Fighters</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">FIGHTERS</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventList">Events</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventList">EVENTS</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/PersonalFavs">Favorites</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/PersonalFavs">FAVORITES</a>
             </li>
         </div>
         {/* section 3 */}
