@@ -26,31 +26,28 @@ const FightTabInfo = (props) => {
                 <div className="flex flex-col items-center justify-center max-w-xl">
                     <ul className="flex space-x-2 font-Table font-bold text-xl text-gray-400">
                         <li>
-                            <a
-                                href="#"
+                            <button
                                 onClick={() => setOpenTab(1)}
                                 className="inline-block px-4 py-2 hover:text-gray-600 duration-500"
                             >
                                 Stats
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <button
                                 onClick={() => setOpenTab(2)}
                                 className="inline-block px-4 py-2 hover:text-gray-600 duration-500"
                             >
                                 Odds
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <button
                                 onClick={() => setOpenTab(3)}
                                 className="inline-block px-4 py-2 hover:text-gray-600 duration-500"
                             >
                                 Rounds
-                            </a>
+                            </button>
                         </li>
                     </ul>
                     <div className="p-3 mt-6 w-full font-Table">
