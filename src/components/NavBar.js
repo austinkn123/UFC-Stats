@@ -14,16 +14,16 @@ function NavBar() {
         {/* section 2 */}
         <div className='flex justify-center flex-wrap text-red-600 font-medium text-2xl'>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">HOME</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">Home</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">FIGHTERS</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">Fighters</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventList">EVENTS</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/EventList">Events</a>
             </li>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/PersonalFavs">FAVORITES</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/PersonalFavs">Favorites</a>
             </li>
         </div>
         {/* section 3 */}
