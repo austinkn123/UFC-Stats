@@ -14,7 +14,7 @@ function NavBar() {
         {/* section 2 */}
         <div className='flex justify-center flex-wrap text-red-600 font-medium text-2xl'>
             <li>
-                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">Home</a>
+                <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/">HOME</a>
             </li>
             <li>
                 <a className="inline-block hover:bg-gray-200 duration-500 p-7" href="/FightListPage">Fighters</a>
