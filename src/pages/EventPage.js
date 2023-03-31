@@ -20,7 +20,7 @@ const EventPage = () => {
         }
     );
 
-    }, [])
+    })
 
     const showWinner = (fighterWin) => {
         if(fighterWin.Winner){
@@ -49,13 +49,14 @@ const EventPage = () => {
                 </div>
                 {fights.map( (fights) => {
                 return (
-                <div className='flex justify-between py-8 px-16 my-8 border shadow hover:shadow-lg' 
+                <div 
+                    className='flex justify-between py-8 px-16 my-8 border shadow hover:shadow-lg' 
                     key={fights.FightId} 
                     onClick={()=> navigateToFightPage(fights.FightId)}
                 >
                     {/* Only 2 fighters per fight so not too bad for performance and runtime? */}
                     {fights.Fighters.map( (fighters, index) => {
-                        if(index == 0){
+                        if(index === 0){
                             return(
                                 <div className='font-NavBarFont'>
                                     <div className=' font-semibold text-black underline decoration-red-600 text-4xl'>
@@ -67,12 +68,12 @@ const EventPage = () => {
                                     <div className='bg-red-600 text-center text-white text-xl mt-2'>
                                         {showWinner(fighters)}
                                     </div>
-                                    
-                                    
                                 </div>
                             );
                         }
+                        return null;
                     })}
+                    
                     <div className='font-Table text-center pt-6'>
                         <div className='font-NavBarFont font-semibold text-black text-2xl underline decoration-red-600 '>
                             VERSUS
@@ -85,7 +86,7 @@ const EventPage = () => {
                         </div>
                     </div>
                     {fights.Fighters.map( (fighters, index) => {
-                        if(index == 1){
+                        if(index === 1){
                             return(
                                 <div className='font-NavBarFont'>
                                     <div className=' font-semibold text-black underline decoration-red-600 text-4xl'>
@@ -97,11 +98,10 @@ const EventPage = () => {
                                     <div className='bg-red-600 text-center text-white text-xl mt-2'>
                                         {showWinner(fighters)}
                                     </div>
-                                    
-                                    
                                 </div>
                             );
                         }
+                        return null;
                     })}
                     
                 </div>

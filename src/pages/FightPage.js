@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import fighterRightSide from '../imgs/fighter-right-side.jpg'
 import fighterLeftSide from '../imgs/fighter-left-side.jpg'
 import FightTabInfo from '../components/FightTabInfo';
@@ -7,7 +7,7 @@ import FightSummaryText from '../components/FightSummaryText';
 
 const FightPage = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const [Fight, setFight] = useState([]);
     const [FighterStats, setFighterStats] = useState([]);
@@ -21,11 +21,11 @@ const FightPage = () => {
         setFight(data);
         setFighterStats(data.FightStats);
         setFighters(data.Fighters);
-        
+        console.log(Fight);
         }
     );
 
-    }, [])
+    })
 
     const showWinner = (fighterWin) => {
         if(fighterWin?.Winner){
