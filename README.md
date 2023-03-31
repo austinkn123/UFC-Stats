@@ -1,3 +1,8 @@
+# This react app uses SportsDataIO for the api and data service
+Since this service is free, some of the data given to me by the service is scrambled such as the weight class, and I would have to pay a subscription to get all of the data unrestricted. I did not pay for the subscription so you just gotta deal with the limited data that is shown. There is no way I am paying for that subscription.
+
+https://sportsdata.io/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
