@@ -1,7 +1,9 @@
 # This react app uses SportsDataIO for the api and data service
-Since this service is free, some of the data given to me by the service is scrambled such as the weight class, and I would have to pay a subscription to get all of the data unrestricted. I did not pay for the subscription so you just gotta deal with the limited data that is shown. There is no way I am paying for that subscription.
+Since this service is free, some of the data given to me by the service is scrambled such as the weight class, and I would have to pay a subscription to get all of the data unrestricted. I did not pay for the subscription so you just gotta deal with the limited data that is shown. There is no way I am paying for that subscription. Also, some of the data is a little wonky for some of the fighters, such as weight or record being slightly inacurrate for some reason. Everything seems to be correct on my end, blame this janky free api. :(
 
 https://sportsdata.io/
+
+https://main--austin-ufc-website.netlify.app/
 
 # Getting Started with Create React App
 
@@ -66,9 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Deployment on Netlify
+https://main--austin-ufc-website.netlify.app/
 
 ### `npm run build` fails to minify
 
