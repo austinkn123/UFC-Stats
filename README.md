@@ -3,6 +3,7 @@ Since this service is free, some of the data given to me by the service is scram
 
 https://sportsdata.io/
 
+### Deployment on Netlify
 https://main--austin-ufc-website.netlify.app/
 
 # Getting Started with Create React App
@@ -67,9 +68,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 ### Advanced Configuration
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment on Netlify
-https://main--austin-ufc-website.netlify.app/
 
 ### `npm run build` fails to minify
 
